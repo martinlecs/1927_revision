@@ -1,0 +1,15 @@
+Answers to week01's tute questions
+
+3. 
+
+For S1: switch(u) = "you "
+        switch(o) = "ohh "
+        switch(e) = "eee "
+
+For S2: switch(u) = "you "
+        switch(o) = "ohh you "
+        switch(e) = "eee eye ohh you "
+
+For S1 there are breaks after each statement so after executing a statement we exit the switch statement. In S2, however, there are no breaks after each statement so it is possible for us to "fall-through" each case and execute all cases below it.
+
+4. There are two ways in which we could do this, we could (1) use switch statements or (2) use a lookup table (array). If the assertion is removed then the code executes no action.
