@@ -13,17 +13,17 @@
 char *dayArray (int n);
 char *daySwitch (int n);
 
-int main (int argc, char * argv[]) {
+int main (int argc, char *argv[]) {
 
     //argument processing
     if(argc < 3) err(1, "Mode: A,S; Day: 0..6");
 
     char *day = NULL; 
-    int n = atoi(argv[3]);
+    int n = atoi(argv[2]);
 
     //choose mode
-    if(strcmp(argv[2],"A")) day = dayArray(n);
-    else if(strcmp(argv[2],"S")) day = daySwitch(n);
+    if(strcmp(argv[1],"A")) day = dayArray(n);
+    else if(strcmp(argv[1],"S")) day = daySwitch(n);
 
     printf("The day is %s\n", day);
 
@@ -51,6 +51,7 @@ char *daySwitch (int n)
         case 4: day = "Thur"; break;
         case 5: day = "Fri"; break;
         case 6: day = "Sat"; break;
+        default: day = "???"; break;
     }
     return day;
 }

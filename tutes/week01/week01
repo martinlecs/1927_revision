@@ -12,4 +12,152 @@ For S2: switch(u) = "you "
 
 For S1 there are breaks after each statement so after executing a statement we exit the switch statement. In S2, however, there are no breaks after each statement so it is possible for us to "fall-through" each case and execute all cases below it.
 
-4. There are two ways in which we could do this, we could (1) use switch statements or (2) use a lookup table (array). If the assertion is removed then the code executes no action.
+4. There are two ways in which we could do this, we could (1) use switch statements or (2) use a lookup table (array). If the assertion is removed then the code executes no action or returns a unique value (???)
+
+5. if-statement equivalent:
+
+if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+    printf("vowel");
+else printf("consonant");
+
+6.
+char ch;
+char * type;
+
+ch = getchar();
+type = (isdigit(ch)) ? "digit" : "non-digit" //"if-statement" is built in
+printf("'%c' is a %s\n", ch, type);
+
+7. There are two possible answers to this questiom
+
+(1) The literal translation
+ch = getchar();
+while (ch != EOF) {
+    putchar(ch);
+    getchar(ch);
+}
+
+(2) The common idiom
+
+while ((ch = getchar()) != EOF) putchar(ch);
+
+
+8. see code/
+
+9. see code/
+
+10. 
+
+a) Yes, this is valid C Syntax. If there is only one statement that follows the for loop, then it is valid.
+
+b) Reads formatted input string from a location and stores it into another location. In this case, sscanf is reading a string from argv[1], converting it into a integer value and then storing it at &N 
+
+c) N = atoi(argv[1]);
+
+d)
+
+assert(argc > 1): Check that there is at least one argument being passsed into the program. 
+
+assert(N>0): check that we have actually scanned in an appropriate array size ie. at least size of 1. 
+
+assert(a != NULL): checks that we actually malloc'ed something
+
+e) They are junk values. They are whatever was stored in that area of memory from a previous process. They do not change throughout the program
+
+f) We do not print or overwrite the contents of a[0] or a[1] throughout the program. They are never used or called.
+
+g) The program implements the "Sieve of Eratosthenes", a very old algorithm for determining prime numbers. It does this by using an array to hold a true/false value for each of the first N integers; if a[i] is true, this means that i is a prime number. The algorithm sets up this array by first assuming that all of the numbers from 2..N are prime. It then makes multiple scans through the array, "eliminating" as potential prime numbers, any numbers which are multiples of smaller numbers. -->Taken directly from answers
+
+11.
+
+argc: is an integer argument to the main() function that indicates how many arguments were typed on the command line that invokved the program. Since it includes the name of the command, it always has a value that is at least 1.
+
+argv: is an array of strings, argument to the main() function that contains the strings for the arguments that were typed on the command line that invoked the program. argv[0] is always the name of the executable file of the program.
+
+stdin: is an input stream (type FILE *) that is open when the program starts and can be used to read program input. By default, it is connected to the keyboard, but can be redirected to come from a file.
+
+stdout: is an output stream (type FILE *) that is open when the program starts and can be used as a destination for program output. By default, it is connected to the screen, but can be redirected so that the output is sent to a file.
+
+stderr: is an output stream (type FILE *) that is open when the program starts and can be used as a destination for program output. By default, it is connected to the screen, but can be redirected so that the output is sent to a file. Note that redirection of stderr and stdout are indepdennt, so you can redirect one without redirecting the other.
+
+exit(): is a function that can be called to terminate execution of the program. It takes a single integer argument which is used as the exit status of the program. The exit status can be used by the program's environment to determine whether the program completed successfully (exit status of zero) or whether there was an error (exit status non-zero).
+
+12. 
+
+a) argc =5; argv[] = {"myprog", "hello ", "there, ", "John Shepherd"}a
+
+ --> 'John Shepered' is one argument despite it being two words!
+b) "hello ". Place it into myFile
+c) getchar() would get its input from the keyboard
+
+13.
+a) incorrect, needs & before variable (so we store into address)
+b) correct
+c) correct
+d) correct
+e) this is an output stream so incorrect
+f) correct
+g) correct
+
+14. See code/
+
+15. Not really a good question
+
+16. 
+
+a) Worst case, it will be checked N times where it has to go through the entire array
+b) Best case, the value it is looking for is in the first element ie. O(1)
+
+17.
+a) Best Case
+	i)n-1 times
+	ii) n*(n-1)/2
+	iii) zero times
+b) Worst case
+	i)n-1 times
+	ii) n*(n-1)/2 times
+ 	iii) n*(n-1)/2 times
+c) best case when list is already sorted. Worst case when list is reverse sorted
+d) It sorts the array of ints from lowest to highest. It is a selection sort
+
+18. (Answer taken from answers)
+
+ADTs differ from DTs in not making the internal representation of the ADT visible to users of the type (clients). In C, this is achieved by referring to instances of the ADT via pointers to the representation object. Clients of the ADT are never shown what's at the end of the pointer. They (are forced to) interact with instances of the ADT using only the interface functions.
+
+ADTs assist the software development process by providing an abstraction layer which hides the complexity of the implementation of objects of the type from users of the type. Also, the separation of interface from implementation means that the implementation can be changed at will, provided that it honours the specification implied by the interface.
+
+ADTs and DTs are both "first class types" in the sense that they allow many instances of the data type to be declared and manipulated. In other words, we can declare variables of the type and then apply the operations of the type to the values stored in these variables.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
