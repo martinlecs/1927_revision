@@ -1,0 +1,35 @@
+Week 2 Tutorial Answers
+
+1. 
+user: the number of cpu seconds spent executing the program code
+system: the number of cpu seconds spent executing system functions on behalf 
+of the the program (examples would include I/O)
+elapsed: the amount of (wall-clock) time between when the process started, and when it finished
+%CPU: how much usage of the CPU the program got while executing; your program will never be the only process running on a modern computer system; you would typically observe that elapsed ~= (user+system)*100/%CPU
+
+2.
+a) 4*3*5 = 60 times
+b) Randomly ordered numbers from 1..Max (specified by user in arguments)
+   Sorted numbers from 1..Max
+   Reverse sorted from Max..1
+c) into a log file
+d) The line cat/dev/null > log creates an initially empty file. Reading from dev/null/ always gives empty input.
+e) The line echo "" >> log appens an empty line to the log file, after each set of 5 runs for a given size and order combination.
+
+3.
+a) For n = 10, time(f(n)) = 1000, time(g(n)) = 200
+b) For n = 20, time(f(n)) = 2000, time(g(n)) = 800
+c) As above
+d) As above
+e) Crossover occurs when time(f(n)) = time(g(n)), ie. when 100n = 2n^2
+    => n = 50.
+
+4.
+
+a) There are n iterations of the while loop. There will always be n comparisons before finding the value. => O(n) time-complexity
+b) Max number of iterations through the loop is n times. The loop terminate once the value is found. Besst case: val occurs as the first element of the array and only one cmp takes place. Worst Case: val does not occur or is the last element in the array. So there are n cmp. Average case: val occurs somewhere in the middle so there is on average n/2 cmp. So worst case O(n).
+c) Binary search: It is critical for this function that the array is sorted. The function first checks the middle element. If val is less than this, the function restricts its search to the lower half of the array. If val is greater than the middle value, the function restricts its search to the upper half of the array. If the middle element is val, the function returns true.
+
+On each iteration, the function eliminates half of the array from consideration. How many times can you do this before you reach a single element? The answer is log2n times. Note that this is the worst case, we might discover val before we have reduced the part of the array being considered to a single element.
+
+Since we ignore constants in quoting algorithmic complexity, so we normally quote the complexity of binary search as O(logN).
