@@ -33,3 +33,19 @@ c) Binary search: It is critical for this function that the array is sorted. The
 On each iteration, the function eliminates half of the array from consideration. How many times can you do this before you reach a single element? The answer is log2n times. Note that this is the worst case, we might discover val before we have reduced the part of the array being considered to a single element.
 
 Since we ignore constants in quoting algorithmic complexity, so we normally quote the complexity of binary search as O(logN).
+
+5.
+
+These two functions are essentially the same:
+
+void sort(int a[], int lo, int hi)
+void sort(int *a, int lo, int hi)
+
+Arrays are manipulated by a pointer to their first element. The first declaration says "a is an array of ints", with the implication being that a pointer to the first element in the array will be passed to the function and the array will be manipulated via that pointer. The second declaration says "a is a pointer to an int". This doesn't necessarily mean that it is a pointer to an array of ints; it may be a pointer to a single int object that is not in an array. In both cases, a pointer to an int is passed to the function; the first declaration is simply more explicit about its intention to use this pointer as the first element in an array.
+
+Both functions would be invoked in the same way, and this could be either of:
+
+
+
+
+
