@@ -42,20 +42,21 @@ int partition(Item a[], int lo, int hi)
     for(;;) {
         for(int k = 0; k < 5; k++) printf("%d ",a[k]);
         printf("\n");
-       while(less(a[i],v) && i < j) {
+       while(less(a[i],v) && i < j) { //Find value bigger than pivot
             i++;
             printf("i is now %d\n", i);
         }
-        while(less(v, a[j]) && j > i) {
+        while(less(v, a[j]) && j > i) { //Find value smaller than pivot
             j--;
             printf("j is now %d\n", j);
         }
         if(i == j) break;
-        swap(a,i,j);
+        swap(a,i,j); //Swap those two values around
     }
     printf("Now we have exited the main loop.\n");
     j = less(a[i],v) ? i: i-1;
     printf("j is now %d\n", j);
-    swap(a,lo,j);
+    swap(a,lo,j); //Move the pivot so that it is behind the numbers that 
+                  // it is smaller than (ie. the ones just sorted)
     return j;
 }

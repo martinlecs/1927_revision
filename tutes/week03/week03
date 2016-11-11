@@ -1,0 +1,17 @@
+//Week03 Tute Answers
+
+1. 
+a) Stable sorting Algorithm:
+
+Relative positions of items with equal sorts keys is the same.
+
+MATH1231 ADAM 3970 or PSYCH1011 ADAM 3970 (1 & 2)
+COMP1927 JANE 3970 or PSYCH1011 JANE 3970 (3 & 4)
+COMP1927 JOHN 3978 or MATH1231 JOHN 3978 (5 & 6)
+COMP1927 PETE 3978 (7)
+
+b) Non-Stable sort
+
+Positions of items with equal sort keys can be in any order.
+
+2. see /code/

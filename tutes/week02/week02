@@ -103,4 +103,8 @@ MAGIC
 
 9. See /code/
 
+10.
 
+a) 20 15 18 25 22 -> 18 15 20 25 22
+b) 22 15 20 18 25 ->goes through loop where nothing is below 25 ie. i==j
+c) 
