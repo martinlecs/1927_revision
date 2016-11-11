@@ -45,7 +45,62 @@ Arrays are manipulated by a pointer to their first element. The first declaratio
 
 Both functions would be invoked in the same way, and this could be either of:
 
+sort(numbers, 10, 20);
+// or...
+sort(&numbers[0], 10, 20);
 
 
+6.
+
+a) Parameters are passed by value in C, and the parementers that we
+passed into the function can be considered to be local variables that
+are intialised at the time the function is called. So the swap function
+will simply change the values of objects that are local to the function
+and all effects will be lost once the function exists. 
+
+The macro function works because the swapping statements are inserted
+into any function that uses the macro (no function being called, just
+snippet code being inserted) and so the effects take place within the
+local environment.
+
+b) We can write an appropriate function that swaps two variables by
+passing their pointers into the function rather than their values. See
+/code/
+
+c) See /code/
+
+7.
+
+For a[5] = {3,1,4,5,2}
+
+a) Bubble Sort
+
+31452 START
+13425
+13245
+12345 
+12345 END (Final Pass)
+
+b) Selection Sort
+
+31452 START
+13452
+12453
+12354
+12345 END
+
+c) Quick Sort (pivot = a[0])
+
+Pivot = 3
+
+31452 START
+213????
+???
+??
+MAGIC
+
+8. Implement Bucket Sort
+
+9. See /code/
 
 
