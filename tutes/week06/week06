@@ -1,0 +1,78 @@
+// Week06 Tute answers
+
+1.
+a) int a[] was incorrectly declared where we did not specify a size. We
+cannot declare an array in C without declaring a size. Also the loop
+assumes that we can use as much memory as we want.
+b) This option works.
+c) Since this doesn't increment curr to go the next node, we create the
+correct sized array bt end up just filling it with the same first value
+N times.
+d) Firstly, if this compiles we would segfault for trying to access
+memory that hasn't been allocated to us. Secondly, int i does not
+increaseso we would keep overwriting a[0].
+
+2. a) is correct
+
+3. d) is correct. There are no breaks in the switch and so it falls
+through to all of the cases following the one that was selected.
+
+The approach here is to pick a value for ch and a value for x and trace
+through the original algorithm to find the expected value and try to see
+if the other algorithms can reproduce it.
+
+4. 
+
+a) Puts a comma after each value, including the last one
+b) segfaults
+c) segfaults because of curr->value after the loop
+d) Correct. Note that the loop stops at the last value but does not
+print it. Instead we print it after the loop + the closing bracket.
+
+5. the merge() is called n times. while mergesort is called logn times.
+
+6.  Note that qsort is formally defined as:
+    
+    void qsort(void *base, size_t nitems, size_t size, int (*compar)(const
+    void *, const void *))
+
+    where
+    base: pointer to the first element of the array to be sorted
+    nitems: number of elements on the array pointed to by base
+    size: size in bytes of each element in array
+    compar: function that compares two elements
+
+    In this question we have an array of 6 elements but only have
+    requested qsort to sort the first 5 elements. So "string" is
+    unsorted and will always be the last element. Therefore d is
+    incorrect.
+    
+    The compare function that is passed into qsort (using strcmp())
+    which returns an integer if is greater than, equal to, or less than
+    0 for s1 vs s2. The value of the integer returned does not matter,
+    only its sign or whether it is equal to 0.
+
+    So we can eliminate (a) from our choice of answers as we in (a) the
+    letter "a" is not the first element sorted. 
+
+    But how do we compare strings using strcmp()? Answer: strcmp()
+    compares strings by their total sum of ascii value.
+
+    But somehow the correct answer is (c) and not (b) as expected.. Why
+    is "of" below "list"??
+
+7. O(n^2)
+8. new line
+
+9. 
+
+head(l) and tail(L) account for the NULL list. In the previous version
+covered in lectures, calling this if we had a null list would result in
+a segfault. The downside is that they can no longer be used on the "LHS"
+of an assignment statement.
+
+ie. we can no longer go tail(L) = curr; in the case where NULL = curr
+which is invalid.
+
+10. See /code/
+
