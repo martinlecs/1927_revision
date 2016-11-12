@@ -1,0 +1,59 @@
+//Wee04 Tute Answers
+
+1. 
+
+a. FILE *stdin
+
+The standard input stream reads from the keyboard by default. To
+redirect input to come from a file, use the < direction, or get the
+command's input from a pipeline (result of another program), e.g.
+
+    ./a.out < someInputFile
+    ls | ./a.out
+
+b. FILE *stdout
+
+The standard output stream write to the terminal screen by default. To
+redirect output to a file, use the > redirection or send the output to a
+pipeline, e.g.
+
+    ./a.out > someOutputFile
+    ./a.out | less
+
+c. FILE * stderr
+
+The standard error stream also writes to the terminal screen by default.
+To redirect error output to a file, use the 2> redirection, e.g.
+    
+    ./a.out > normalOutput 2> errorOutput
+
+Where does the '2' come from? The standard erroe stream is file
+descriptor 2 in any process started from the Unix shell.
+
+It is useful to have two output streams which can be independently
+redirected so that, for example, you can send the regular output of a
+program to one file, and keep sending any error messages to the terminal
+screen, without having them mixed in with the regular output.
+
+2. 
+
+a) Formally defined as int fputs(const char *str, FILE *stream). In this
+case, fputs will print "hello" followed by a new line onto stdout. or to
+a file.
+
+b) System call that writes "hello" to the stdout only
+
+c) printf takes formatted input and prints to stdout or to a file
+
+d)fprintf(FILE *stream, "hello\n") prints "hello" followed by a newline
+onto stdoit
+
+e)writes "hello\n" to stdout
+
+3. 
+a) first line
+   second line
+   a line
+b) a line
+c) first line
+   second line
