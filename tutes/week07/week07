@@ -53,3 +53,25 @@ nE = 6
 5: 4
 
 9. See /code/
+
+10. The adjacency matrix representation always requires V*V matrix,
+regardless of the number or edges, where each element is 1 byte long. It
+also requires an array of V pointers. This gives a fixed size of V*4+V^2
+bytes.
+
+The adjacency list representation requires an array of V pointers (the
+start of each list) with each being 4 bytes long, and then one list node
+for each edge in each list. The total number of edges is 2E (each
+edge(v,w) is stored twice, once in the list for v and once in the list
+for w). Since each node requires 8 bytes (vertex+pointer), this gives a
+size of V*4+8*2*E. The total storage ius this V*$+16*E.
+
+See tute for more details
+So its V^2 vs 16*E
+
+11. See /code/
+
+14.
+
+depthFirst(g,0): 01234567
+depthFirst(g,3): 31025674
