@@ -1,0 +1,55 @@
+// Answers to week07 tutes
+
+6. 
+
+a) Path:
+
+Smallest: Any path with a single edge incident to two adjacent vertices
+e.g. a-j or g-m
+Largest: The path including all vertices e.g.
+m-g-h-i-k-j-a-b-d-f-c-e
+
+b) Cycle: a path where the last vertex in the path is also the same as
+the first vertex
+
+Smallest: j-k-i-j or i-k-h-i or b-d-f-b etc. 
+Largest: g-h-k-i-j-a-b-c-d-e-f-g
+
+c) Spanning Tree: tree(no cycles) containing all vertices
+
+There is no smallest or largest spanning tree as it must contain all
+vertices.
+
+d)any complete subgraph (there is an edge from each vertex to every
+other vertex)
+
+7. 
+
+a) Adjacency Matrix (V*V 2D array)
+
+nV = 6
+nE = 6
+
+    0 1 2 3 4 5 
+0   0 1 1 0 0 0
+1   1 0 0 1 0 0
+2   1 0 0 1 1 0
+3   0 1 1 0 0 0
+4   0 0 1 0 0 1
+5   0 0 0 0 1 0
+
+b) Adjacency List
+
+Array of lists: List *edges
+
+nV = 6
+nE = 6
+
+0: 1->2
+1: 0->3
+2: 0->3->4
+3: 1->2
+4: 2->5
+5: 4
+
+9. See /code/

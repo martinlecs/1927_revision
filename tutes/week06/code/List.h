@@ -21,3 +21,4 @@ typedef Link List;
 Link newNode(int value);
 void drop(List L);
 void Drop(List L);
+List copy(List);
