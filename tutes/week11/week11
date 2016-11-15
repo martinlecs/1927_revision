@@ -1,0 +1,52 @@
+// Tute answers for week11
+
+1.
+
+Given that the size of variables we are given are
+
+sizeof(int) == 4
+sizeof(unsigned char) == 1
+sizeof(AllPointers) == 4
+
+And the struct we are given is 
+
+typedef struct GraphRep { 
+   int nV; // vertex count 
+   int nE; // edge count
+   unsigned char **edges; // adjacency matrix
+} *Graph;
+
+Values:
+
+int nV = 4
+int nE = 4
+unsigned char **edges = 4
+-> points to an array of pointers which points to edges array below = 10*4 =40
+->-> 10 pointers to 10 arrays of size 10 where each element is 1 byte size = 100
+
+So total size is 4+4+4+40+100 = 152 bytes total
+
+So in actual fact we are not storing a 2D array but instead storing pointers to subarrays. ie. a pointer to "A" that points to an array of actual values inside A1, A2, A3, A4, A5 etc.
+
+2.
+
+Assume lowest is "lexographic ordering"
+
+The order in which we visit everything is 
+a-b-c-d-e-f-g-i
+
+3. b) is the correct answer as the other answers have repeated edges in them (definition of an Euler path is a path which contains every edge exactly once). Also some of the answers contain connections to edges which are not possible if we were to trace through the routes.
+w
+4. f) is the correct answer. There is no way to remove exactly 1 edge which will result in another component forming. If we could remove two edges then this problem would be trivial.
+ 
+5. Empty trees, trees with only one node, trees that are "right-deep" ie linked lists -> nodes that were inserted in order have the property that their infix and prefix output is the same.
+
+6. see /code/
+ 
+7. Minimum height of tree = ceil(log2(n+1))
+
+8. Every node is worth 3 points. Count all the nodes including the root
+and multiply that by 3.
+
+9.
+

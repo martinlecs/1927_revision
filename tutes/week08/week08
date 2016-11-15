@@ -1,0 +1,46 @@
+// Answers to week08 tute questions
+
+
+1. A connected graph is a graph where a vertex can be reached from any
+other vertex in the graph. A complete graph is where every vertex is
+connected to each other. A connected graph is a subgraph of a complete
+graph.
+
+2. 
+
+Hamilton path: Path that contains each vertex exactly once
+Euler Path: Path that contains each edge exactly once.
+Circuit/Tour: where there first vertex is the same as the last vertex.
+
+
+Euler Path: Exactly 2 vertices with odd degree
+Euler Circuit: Vertices all have even degree
+
+G1: There is a hamilton and euler path from 0-1-2
+G2: There are two hamilton paths (0-1-2 and 2-1-0). There is one Euler
+circuit (0-1-2-0)
+G3: No hamilton paths/tours. No euler path/tours
+G4: Hamilton paths exist (e.g. 0-3-2-1 or 1-2-3-0). Hamilton circuit
+also exists. No euler path 
+
+3.
+
+4.
+
+a) Bridge: an edge in which its removable causes the increase of
+components (disconnected parts).
+b) cc{} does not change. Removing d does not cause an increase in the
+number of componentes
+c) removing bridge b causes another component to form (2)
+
+so vertices 2-6-8 will be considered its own component so
+a[]= {0,0,2,1,1,1,2,0,2,1}
+
+5. see /code/
+Rather than checking that every vertex is even. Its easier to check if
+one of the vertices is odd which invalidates the exisitence of a Euler
+path ie. prove that there isnt an euler path by showing that one of its
+vertices is odd which is proof by contradiction.
+
+6
+. see /code/

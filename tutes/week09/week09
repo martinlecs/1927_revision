@@ -1,0 +1,41 @@
+// Answers to week09 tute
+
+3. There are two algorithms that we can use to find a minimum spanning
+tree. (1) Kruskall's Algorithm or (2) Prim's Algorithm
+
+(1) CHOOSE EDGES: Start with an empty MST and choose edges in increasing weight order.Add edge to MST if it does not form a cycle.
+
+(2) CHOOSE EDGE: Start from any vertex and an empty MST. Choose an
+edge that is no already in the MST. Edge must not be involved in a
+self-loop. It must also connect to a vertex already on the MST. It must
+also have the least weight out of the candidate edges.
+
+Using Kruskall's:
+
+1-2 3-4 1-4 4-5 4-7 6-7 7-5
+
+
+4. Using the same graph as above and tracing through our steps:
+
+How many edges did we consider? we considered 9 of the 12 possible edges
+(this includes chosen edges and rejected edges) in determing the MST.
+
+For graph(V,E) the best case would when the first V-1 edges we
+considered are the lowest cost edges and non of these edges leads to a
+cycle (ie. the first edge we pick each round is valid).
+
+The worst case would we when we had to consider all E edges.
+
+To force Kruskall's into its worse case scenario, we would add an 8th
+vertice and connect it to 5 with a cost larger than all the other edge
+costs in the graoh, then we would have to consider all edges during this
+iteration (we start considering from smallest to largest) before
+arriving at the fact that there is only one possible route.
+
+5. see /code/
+
+8. pred[v] gives the last vertex (before v) on the shortest known path
+to reach vertex v. dist[v] gives the total length (sum of edge weights)
+of the shortest known path to reach vertex v.
+
+9.
