@@ -1,0 +1,18 @@
+// Answers to week12 tute
+
+1. While a random graph walk or DFS can potentially find the shortest
+path (least number of edges), it is not guaranteed each time. BFS
+explores the graph by spreading out a network from the source. Whenever
+it reaches the destination, that must be the shortest path (least
+edges).
+
+2. (a) Trace through the final arrays and make sure that things match
+up.
+
+3. min depth =  ceil(log2n)
+
+4. (b)
+
+5.
+
+9. Revise red-black trees until I can predict how to build them
